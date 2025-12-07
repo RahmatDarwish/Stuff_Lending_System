@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+  <!-- Exclude EI_EXPOSE_REP2 warnings for dependency injection in controllers and services -->
+  <!-- These are legitimate dependency injection patterns, not data exposure issues -->
+  
+  <!-- MemberController constructor -->
+  <Match>
+    <Class name="controller.MemberController"/>
+    <Method name="&lt;init&gt;"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+  
+  <!-- ItemController constructor -->
+  <Match>
+    <Class name="controller.ItemController"/>
+    <Method name="&lt;init&gt;"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+  
+  <!-- ContractController constructor -->
+  <Match>
+    <Class name="controller.ContractController"/>
+    <Method name="&lt;init&gt;"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+  
+  <!-- ItemService constructor -->
+  <Match>
+    <Class name="model.service.ItemService"/>
+    <Method name="&lt;init&gt;"/>
+    <Bug pattern="EI_EXPOSE_REP2"/>
+  </Match>
+</FindBugsFilter>
